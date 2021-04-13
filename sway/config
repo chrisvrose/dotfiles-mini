@@ -25,7 +25,8 @@ set $menucmd wofi --show run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ../wallpaper/wallpaper.jpg fill 
 #
 # Example configuration:
 #
@@ -73,7 +74,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # Start your launcher
     bindsym $mod+d exec $menu
     bindsym $mod+Shift+d exec $menucmd
-
+    #bindsym XF86AudioPlay exec playerctl play-pause
+    #bindsym XF86AudioNext exec playerctl next
+    #bindsym XF86AudioPrev exec playerctl previous
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -220,6 +223,10 @@ bar {
 }
 xwayland disable
 
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
 
 # gaps outer 4
 for_window [app_id=".*"] border pixel 1
